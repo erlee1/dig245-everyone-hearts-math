@@ -1,96 +1,80 @@
 <!doctype html>
 <html lang="en">
 ​
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-​
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-​
-    <title>DIG 245 Everyone ♥ Math</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  ​
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">​
+
+  <title>DIG 245 Everyone ♥ Math</title>
 </head>
 ​
+
 <body>
-​
-​
-    <div class="container">
-​
-​
-        <h1>DIG 245 Everyone ♥ Math</h1>
+  ​
+  ​
+  <div class="container">
+    ​
+    ​
+    <h1>DIG 245 Everyone ♥ Math</h1>
+    <h3>by Erina Lee and Henry Howell</h3>
+    <blockquote>
+      You, the denim lover to the left, just splurged on an enormous meal at a fancy restaurant. You want to tip
+      the waiter to the right for his incredible service. If you tip too much, you'll go broke but
+      the waiter will be happy. If you tip too little, you'll have extra money left
+      over but the waiter will cry himself to sleep that night. You have to tip just
+      the right amount—20%—to satisfy both your wallet and the waiter.
+    </blockquote>
+    <center>
 
-        <center>
-          <form>
-            <h3>What is 20% of $150?</h3>
-            <label for="answer">$</label>
-            <input type="number" name="answer" id="answer" min="0" required>
-            <br>
-            <input type="submit" id="submission" value="Tip!">
-          </form>
-        </center>
-​
-        <form action="#">
-​
-            <input type="text" id="bananas" class="form-control">
-​
-​
-        </form>
-​
-​        <div id="answerValue"></div>
-        <div id="bananasValue"></div>
-        
-​
-    </div>
-​
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-​
-    <script>
+      <div id="youValue">
+        <img class="you" src="assets/img/neutral-you.jpg" id = "youImage">
+      </div>
 
-        document.querySelector("form").addEventListener("submit", function(event) {
-            var age = document.getElementById("answerValue").value;
-            document.getElementById("answerValue").innerText += "Tip Percentage: " + (answer.value/150)*100 + "\n";
-            
-            event.preventDefault();
-            if (answer.value >15){
-            window.alert("That's too high");
-            }
-            else if (answer.value < 15){
-                window.alert("That's too low");
-            }
-            else if (answer.value == 15){
-                window.alert("That's just right");
-            }
-        }, false);
+      <div id="waiterValue">
+        <img class="waiter" src="assets/img/neutral-waiter.jpg" id = "waiterImage">
+      </div>
 
-        // // store a reference to the bananas input element
-        // var bananas = document.getElementById("bananas");
-        // var answer = document.getElementById("answer");
-        // // add an on load listener to the page
-        
-        // window.onload = function() {
-        //     answer.addEventListener("input", function() {
+      <form action="#">
+        <h3>What is 20% of $150?</h3>
+        <label for="answer">$</label>
+        <input type="number" name="answer" id="answer" min="0" required>
+        <br>
+        <input type="submit" id="submission" value="Tip!">
+      </form>
+      <br>
+      <div id="answerValue"></div>
+    </center>
 
-        //         console.log(answer.value);
+    ​
+  </div>
+  ​
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  ​
+  <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+      var age = document.getElementById("answerValue").value;
+      document.getElementById("answerValue").innerText += "Tip Percentage: " + (answer.value / 150) * 100 + "\n";
 
-        //         updatePage();
-        //         });
-        //     // add an input event listener to bananas input
-        //     // bananas.addEventListener("input", function() {
-        //     //     // log
-        //     //     console.log(bananas.value);
-        //     //     // call the updatePage function
-        //     //     updatePage();
-        //     // });
-        // }
-        // update visual stuff on the page
-        // function updatePage(){
-        //     // store the vaalue of bananas (*3) inside the #bananasValue element
-        //     document.getElementById("answerValue").innerText = "Tip Percentage: " + (answer.value/150)*100;
-            
-        // }
-
-
-
-
-    </script>
+      event.preventDefault();
+      if (answer.value > 30) {
+        window.alert("That's too high! The waiter is happy but you are sad. Try again!");
+        document.getElementById("waiterImage").src = "assets/img/happy-waiter.jpg";
+        document.getElementById("youImage").src = "assets/img/sad-you.jpg";
+      } else if (answer.value < 30) {
+        window.alert("That's too low! You are happy but the waiter is sad. Try aagin!");
+        document.getElementById("waiterImage").src = "assets/img/sad-waiter.jpg";
+        document.getElementById("youImage").src = "assets/img/happy-you.jpg";
+      } else if (answer.value == 30) {
+        window.alert("That's just right! Both you and the waiter are happy. Good work!");
+        document.getElementById("waiterImage").src = "assets/img/happy-waiter.jpg";
+        document.getElementById("youImage").src = "assets/img/happy-you.jpg";
+      }
+    }, false);
+  </script>
 </body>
+
 </html>

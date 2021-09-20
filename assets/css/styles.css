@@ -1,2 +1,16 @@
 
 /* css */
+
+.waiter{
+  width: 15%;
+  height: 15%;
+  float: right;
+  margin-right: 200px;
+}
+
+.you{
+  width: 15%;
+  height: 15%;
+  float: left;
+  margin-left:200px;
+}
