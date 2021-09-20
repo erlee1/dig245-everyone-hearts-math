@@ -27,13 +27,13 @@
             <input type="submit" id="submission" value="Tip!">
           </form>
         </center>
-​
+<!-- ​
         <form action="#">
 ​
             <input type="text" id="bananas" class="form-control">
 ​
 ​
-        </form>
+        </form> -->
 ​
 ​        <div id="answerValue"></div>
         <div id="bananasValue"></div>
@@ -50,13 +50,13 @@
             document.getElementById("answerValue").innerText += "Tip Percentage: " + (answer.value/150)*100 + "\n";
             
             event.preventDefault();
-            if (answer.value >15){
+            if (answer.value > 20){
             window.alert("That's too high");
             }
-            else if (answer.value < 15){
+            else if (answer.value < 20){
                 window.alert("That's too low");
             }
-            else if (answer.value == 15){
+            else if (answer.value == 20){
                 window.alert("That's just right");
             }
         }, false);
